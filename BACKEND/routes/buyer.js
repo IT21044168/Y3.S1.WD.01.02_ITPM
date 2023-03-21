@@ -108,17 +108,6 @@ router.route("/deletePost/:id").delete(async (req, res) => {
         })
 })
 
-//get one log by id
-router.route("/get/:id").get(async (req, res) => {
-    let BuyerId = req.params.id;
-    const buyerId= await Incomes.findOne(buyerId)
-        .then((incomes) => {
-            res.status(200).send({ status: "Post fetched",data:buyerId })
-        }).catch((err) => {
-            console.log(err.message);
-            res.status(500).send({ status: "Error with getting posts", error: err.message });
-        })
-})
 
 
 
