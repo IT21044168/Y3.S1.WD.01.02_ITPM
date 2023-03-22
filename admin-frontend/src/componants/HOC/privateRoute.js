@@ -1,9 +1,6 @@
 import React from "react";
-import { Home } from "../../containers/Dashboard/dashboard";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Products } from "../../containers/Products";
 import { Category } from "../../containers/Category";
-import { Inventory } from "../../containers/inventory";
 
 function PrivateRoute(props) {
   const token = window.localStorage.getItem("token");
@@ -19,7 +16,7 @@ function RootRoute() {
   if (token) {
     return (
       <Routes>
-        <Route path="" element={<Home />} />
+        <Route path="" element={<Category />} />
       </Routes>
     );
   } else {
@@ -37,7 +34,7 @@ function PrivateHome() {
   if (token) {
     return (
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<Category />} />
       </Routes>
     );
   } else {
@@ -45,33 +42,6 @@ function PrivateHome() {
   }
 }
 
-function PrivateInventory() {
-  const token = window.localStorage.getItem("token");
-
-  if (token) {
-    return (
-      <Routes>
-        <Route path="/inventory" element={<Inventory />} />
-      </Routes>
-    );
-  } else {
-    return <Navigate to="/signin" />;
-  }
-}
-
-function PrivateProducts() {
-  const token = window.localStorage.getItem("token");
-
-  if (token) {
-    return (
-      <Routes>
-        <Route path="/products" element={<Products />} />
-      </Routes>
-    );
-  } else {
-    return <Navigate to="/signin" />;
-  }
-}
 
 
 function PrivateCategories() {
@@ -93,9 +63,7 @@ function PrivateCategories() {
 
 export {
   PrivateHome,
-  PrivateProducts,
   PrivateCategories,
   PrivateRoute,
   RootRoute,
-  PrivateInventory,
 };

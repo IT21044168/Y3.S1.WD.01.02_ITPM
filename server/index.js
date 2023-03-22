@@ -11,7 +11,6 @@ import { connect } from "./dbConnection.js"
 //Routes
 import adminRoutes from './routes/AdminRoutes.js'
 import categoryRoutes from './routes/categoryRoutes.js'
-import productRoutes from './routes/productRoutes.js'
 import initDataRoutes from './routes/initialDataRoutes.js'
 
 dotenv.config()
@@ -33,7 +32,6 @@ app.use(cors())
 
 app.use('/api', adminRoutes)
 app.use('/api', categoryRoutes)
-app.use('/api', productRoutes)
 app.use('/api', initDataRoutes)
 
 //mongoose config

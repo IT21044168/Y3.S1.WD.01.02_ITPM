@@ -1,5 +1,4 @@
 export * from "./authAction"
 export * from "./userActions"
 export * from "./categoryActions"
-export * from "./productActions"
 export * from "./initDataActions"
