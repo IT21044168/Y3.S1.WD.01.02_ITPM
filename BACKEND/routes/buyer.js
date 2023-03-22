@@ -1,4 +1,3 @@
-
 const router = require('express').Router();
 let Buyer = require('../Model/buyer');//import the model
 
@@ -107,6 +106,7 @@ router.route("/deletePost/:id").delete(async (req, res) => {
             res.status(500).send({ status: "Error in deleting", error: err.message })
         })
 })
+
 
 
 
