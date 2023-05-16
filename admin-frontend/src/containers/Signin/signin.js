@@ -30,7 +30,7 @@ export const Signin = (props) => {
     }
     
     if(auth.authenticated){
-        return <Navigate to='/home' />
+        return <Navigate to='/categories' />
     }
 
     return(

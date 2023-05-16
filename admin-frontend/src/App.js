@@ -4,16 +4,11 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Signin } from "./containers/Signin/signin";
 import { Signup } from "./containers/Signup/signup";
-import {
-  PrivateHome,
-  PrivateProducts,
-  PrivateCategories,
-  RootRoute,
-  PrivateInventory,
-} from "./componants/HOC/privateRoute";
 import { useDispatch, useSelector } from "react-redux";
-import { isLoggedIn, getInitdata } from "./actions";
+import { isLoggedIn } from "./actions";
 import { Category } from "./containers/Category";
+import SellerPosts from "./containers/SellerPosts";
+import BuyerPosts from "./containers/BuyerPosts";
 function App() {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -22,27 +17,16 @@ function App() {
     if (!auth.authenticated) {
       dispatch(isLoggedIn());
     }
-    dispatch(getInitdata());
   }, []);
 
   return (
     <div className="App">
       <Routes>
-        <Route element={<RootRoute />}>
-          <Route path="" />
-        </Route>
-
-        <Route element={<PrivateHome />}>
-          <Route path="/home" element={<Category />} />
-        </Route>
-
-        <Route element={<PrivateCategories />}>
-          <Route path="/categories" element={<Category />} />
-        </Route>
-
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/categories" element={<Category />} />
+        <Route path="/sellerposts" element={<SellerPosts />} />
+        <Route path="/buyerposts" element={<BuyerPosts />} />
+        <Route path="/" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
-
       </Routes>
     </div>
   );

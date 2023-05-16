@@ -11,7 +11,8 @@ import { connect } from "./dbConnection.js"
 //Routes
 import adminRoutes from './routes/AdminRoutes.js'
 import categoryRoutes from './routes/categoryRoutes.js'
-import initDataRoutes from './routes/initialDataRoutes.js'
+import sellerPostRoutes from './routes/sellerPostRoutes.js'
+import buyerPostRoutes from './routes/buyerPostRoutes.js'
 
 dotenv.config()
 
@@ -32,7 +33,8 @@ app.use(cors())
 
 app.use('/api', adminRoutes)
 app.use('/api', categoryRoutes)
-app.use('/api', initDataRoutes)
+app.use('/api', buyerPostRoutes)
+app.use('/api', sellerPostRoutes)
 
 //mongoose config
 const PORT = process.env.PORT || 9000

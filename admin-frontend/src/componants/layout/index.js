@@ -18,11 +18,15 @@ export const Layout = (props) => {
           <Row>
             <Col md={2} className="sidebar">
               <ul>
-                
                 <li>
                   <NavLink to={"/categories"}>Categories</NavLink>
                 </li>
-                
+                <li>
+                  <NavLink to={"/buyerposts"}>Buyer Posts</NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/sellerposts"}>Seller Posts</NavLink>
+                </li>
               </ul>
             </Col>
             <Col md={10} style={{ marginLeft: "auto", padding: "60px" }}>

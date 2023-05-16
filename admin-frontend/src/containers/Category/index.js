@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { addNewCat, deleteCategories, getAllCategories, updateCategories, updateCatImg } from '../../actions'
@@ -21,6 +21,9 @@ import 'react-checkbox-tree/lib/react-checkbox-tree.css'
 **/
 
 export const Category = (props) => {
+	useEffect(() => {
+		dispatch(getAllCategories())
+	},[])
 	const [show, setShow] = useState(false);
 	const [checked, setChecked] = useState([])
 	const [expanded, setExpanded] = useState([])
