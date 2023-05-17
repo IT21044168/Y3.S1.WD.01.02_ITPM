@@ -2,7 +2,7 @@ import React, {useState , useEffect} from "react";
 import axios from "axios";
 import { useParams , useNavigate} from "react-router-dom";
 import '../style/buyer.css';
-import swal from 'sweetalert'
+import swal from 'sweetalert';
 
 
 function UpdateBuyerPost(){
@@ -48,31 +48,26 @@ function UpdateBuyerPost(){
     function sendData(e){
         e.preventDefault();
         
-        const newBuyerPost = {
-            buyerId,
-            postTitle,
+        const newIncome = {
+            invoiceId,
+            type,
             description,
-            mobileNo,
-            publishedDate,
-            targetPrice,
-            quantityRequired,
-            paymentTerms,
-            destination,
-            suppliersFrom
-            }
+            amount,
+            date
+        }
 
-        axios.put(`http://localhost:8070/buyer/updatePost/${ID.id}`, newBuyerPost).then(()=>{
-           
+        axios.put(`http://localhost:8070/incomes/update/${ID.id}`, newIncome).then(()=>{
+            //alert("Invoice updated!");
 
 
             swal({
                 
-                title: "Post details updated!",
+                title: "Income details updated!",
                 icon: "success",
                 button: false,
                 timer : 3000,
         });
-            navigate("/buyer");
+            navigate("/incomes");
         }).catch(( err)=>{
             alert(err);
         })
@@ -80,7 +75,7 @@ function UpdateBuyerPost(){
 
     
     function setDateFormat(){                       //<----format date for compatibilty with inputType='Date'
-        var theDate = new Date(publishedDate);
+        var theDate = new Date(date);
         var year = theDate.getFullYear();
         var month = theDate.getMonth() + 1;
         var day = theDate.getDate();
@@ -96,89 +91,61 @@ function UpdateBuyerPost(){
 
     return(
         <div className="dev-container">
-            <div className="form-container">
-                <form className="form-container" onSubmit={sendData} class="p-3 mt-3"><br />
-                    <button class="btn btn-secondary mb-4" onClick={() => navigate(`/buyer/allPosts`)}>Back</button>
-                    <h1>Add New Buyer Post</h1>
-                    <div className="mb-3">
-                        <label for="buyerId" className="form-label">Buyer Id</label>
-                        <input id="buyerId" className="form-control" type="text" required onChange={
-                            (e) => {
-                                setbuyerId(e.target.value);
-                            }} />
+        <div className="form-container">
+            <form onSubmit={sendData} class="p-3 mt-3"><br />
+            <button class="btn btn-secondary mb-4" onClick={() => navigate(`/incomes`)}>Back</button>
+            <div className="mb-3">
+                <h1>Update Income Log</h1><br/>
+                  <label htmlFor="invoiceId" className="form-label">Invoice ID</label>
+                    <input type="text" className="form-control" id="invoiceId" value={invoiceId} disabled style={{backgroundColor: "#cccccc"}} />
+                </div>
+                <div class="dropdown">
+
+
+                        <label for="dog-names">Income Type:</label>
+
+                        <select name="dog-names" id="dog-names" style={{ width: "250px" }} value={type} onChange={
+                            (e) => { setType(e.target.value); }}>
+
+                            <option value=""></option>
+                            <option value="Wholesale">Wholesale</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Others">Others</option>
+                            
+                           
+
+
+                        </select>
+
                     </div>
-                    <div className="mb-3">
-                        <label for="postTitle" className="form-label">Post Title</label>
-                        <input id="postTitle" className="form-control" type="text" required onChange={
-                            (e) => {
-                                setpostTitle(e.target.value);
-                            }} />
+
+                <div className="mb-3">  
+                    <label htmlFor="name">Description</label>
+                    <input id="name" className="form-control" type="text" name="name"  value={description} onChange={
+                        (e)=>{setdescription(e.target.value);
+                    }} />
+                  </div>
+
+
+                    <div className="mb-3">  
+                    <label htmlFor="name">Amount</label>
+                    <input id="name" className="form-control" type="text" name="name"  value={amount} onChange={
+                        (e)=>{setamount(e.target.value);
+                    }} />
                     </div>
-                    
-                    <div className="mb-3">
-                        <label for="description" className="form-label">Description</label>
-                        <input id="description" className="form-control" type="text" onChange={
-                            (e) => {
-                                setdescription(e.target.value);
-                            }} />
-                    </div>
-                    <div className="mb-3">
-                        <label for="mobileNo" className="form-label">MobileNo</label>
-                        <input id="mobileNo" className="form-control" type="text" required onChange={
-                            (e) => {
-                                setmobileNo(e.target.value);
-                            }} />
-                    </div>
-                    
-                    <div className="mb-3">
-                        <label for="targetPrice" className="form-label">Target Price</label>
-                        <input id="targetPrice" className="form-control" type="text" onChange={
-                            (e) => {
-                                settargetPrice(e.target.value);
-                            }} />
-                    </div>
-                    <div className="mb-3">
-                        <label for="quantityRequired" className="form-label">Quantity Required</label>
-                        <input id="quantityRequired" className="form-control" type="text" onChange={
-                            (e) => {
-                                setquantityRequired(e.target.value);
-                            }} />
-                    </div>
-                    <div className="mb-3">
-                        <label for="paymentTerms" className="form-label">Payment Terms</label>
-                        <input id="paymentTerms" className="form-control" type="text" onChange={
-                            (e) => {
-                                setpaymentTerms(e.target.value);
-                            }} />
-                    </div>
-                    <div className="mb-3">
-                        <label for="destination" className="form-label">Destination</label>
-                        <input id="destination" className="form-control" type="text" onChange={
-                            (e) => {
-                                setdestination(e.target.value);
-                            }} />
-                    </div>
-                    <div className="mb-3">
-                        <label for="suppliersFrom" className="form-label">Suppliers From</label>
-                        <input id="suppliersFrom" className="form-control" type="text" onChange={
-                            (e) => {
-                                setsuppliersFrom(e.target.value);
-                            }} />
-                    </div>
-                
+
                     <div className="mb-3">
                     <label htmlFor="date">Date</label>
                     <input id="date" className="form-control" style={{width: "250px"}} type="date" value={setDateFormat()} required onChange={
-                        (e)=>{setpublishedDate(e.target.value);
+                        (e)=>{setDate(e.target.value);
                     }}/>
                 </div>
-
                 <button type="submit" className="btn btn-primary">Submit</button>
-                <button className="btn btn-danger mx-2" onClick={() => navigate(`/buyer/allPosts`)}>Cancel</button>
+                <button className="btn btn-danger mx-2" onClick={() => navigate(`/incomes`)}>Cancel</button>
                    </form>
         </div>
         </div>
     )
 }
 
-export default UpdateBuyerPost;
+export default UpdateBuyerPost();
