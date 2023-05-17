@@ -1,0 +1,49 @@
+.dev-container{
+    width: 100%;
+    height: 100vh;
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   /* background-color: #ede7e7;*/
+}
+.form-container{
+    width: 50%;
+    background-color: #ffffff;
+    padding: 5%;
+}
+.form-containers{
+    width: 50%;
+    background-color: #ffffff;
+    padding: 5%;
+}
+h1{
+    text-align: center;
+}
+.linkbtn{
+    text-decoration: none;
+    color: white;
+}
+.linkbtn:hover{
+    color: white;
+}
+#btn-sub{
+    margin: 2rem 2rem 0 0;
+}
+#form-field{
+    margin-top: 1rem;
+}
+
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    content: "Select Date";
+    top: 30px;
+    right: 10px;
+    width: 130px;
+    height: 30px;
+    border-radius:5px;
+  }

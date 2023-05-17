@@ -1,60 +1,57 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-const buyerSchema = new schema({
-    buyerId : {
+const supplierSchema = new schema({
+    supplierId : {
         type : String,
         required : true
     },
+
     postTitle : {
         type : String,
         required : true
     },
 
-    description : {
+    companyName : {
+        type : String,
+        required : true
+    },
+    companyAddress : {
         type : String,
         required: true
     },
-    
+    email : {
+        type : String,
+        required: true
+    },
     mobileNo : {
         type : Number,
         required : true
     },
-
     publishedDate:{
         type : Date,
         required : true
     },
-
-    targetPrice : {
+    price : {
         type: Number,
         required : true
     },
-
-    quantityRequired : {
+    minimumOrderQuantity : {
         type : Number,
         required : true
     },
-
-    paymentTerms : {
+    packaging : {
         type : String,
         required : true
     },
-
-    destination : {
+    description : {
         type : String,
-        required : true
-    },
-    suppliersFrom :{
-        type: String,
-        required : true
+        required: true
     }
-   
     
 
 });
 
-const Buyer = mongoose.model("BuyerPostDetail",buyerSchema);
+const Supplier = mongoose.model("Supplier",supplierSchema);
 
-module.exports = Buyer;
-
+module.exports = supplier;
