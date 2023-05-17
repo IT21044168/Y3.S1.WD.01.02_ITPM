@@ -58,10 +58,10 @@ router.route("/allPosts").get((req,res)=>{
 //fecth the parameter in the url-->req.params
 
 router.route("/updatePost/:id").put(async (req, res) => {
-    let BuyerId = req.params.id;
+    let buyerId = req.params.id;
 
     //destructure the object
-    const { buyerId,
+    const { BuyerId,
         postTitle,
         description,
         mobileNo,
@@ -86,7 +86,7 @@ router.route("/updatePost/:id").put(async (req, res) => {
         
     }
 //finds if such buyerId is there
-    const update = await Buyer.findByIdAndUpdate(BuyerId,updateBuyerPost)
+    const update = await Buyer.findByIdAndUpdate(buyerId,updateBuyerPost)
         .then(() => {
             res.status(200).send({ status: "Buyer Post Updated" })
         }).catch((err) => {
@@ -104,6 +104,18 @@ router.route("/deletePost/:id").delete(async (req, res) => {
             res.status(200).send({ status: "Buyer Post deleted" })
         }).catch((err) => {
             res.status(500).send({ status: "Error in deleting", error: err.message })
+        })
+})
+
+http://localhost:8070/buyer/get/:id
+router.route("/get/:id").get(async (req, res) => {
+    let buyerId = req.params.id;
+    const BuyerId = await Buyer.findById(buyerId)
+        .then((buyer) => {
+            res.status(200).send({ status: "Buyer Post fetched", buyer })
+        }).catch((err) => {
+            console.log(err.message);
+            res.status(500).send({ status: "Error with getting invoice", error: err.message });
         })
 })
 

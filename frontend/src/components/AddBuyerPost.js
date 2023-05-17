@@ -131,6 +131,7 @@ export default function AddIncome() {
                     </div>
 
                     <button type="submit" value id="btn-sub" className="btn btn-primary">Submit</button>
+                    <Link to="/buyer/allPosts" className="linkbtn">Cancel</Link>
                     <button type="cancel" value id="btn-sub" className="btn btn-danger">
                         <Link to="/buyer/allPosts" className="linkbtn">Cancel</Link>
                     </button>

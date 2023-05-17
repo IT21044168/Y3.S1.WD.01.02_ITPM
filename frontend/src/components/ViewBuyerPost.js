@@ -14,12 +14,32 @@ function ViewBuyerPost() {
   const [filteredBuyerPost, setfilteredBuyerPost] = useState([]);
   const [searchStartDate, setSearchStartDate] = useState("");
   const [searchEndDate, setSearchEndDate] = useState("");
-  
+
+  useEffect(() => {
+    setfilteredBuyerPost(buyer);
+    if (searchStartDate || searchEndDate) {
+      var arr = [];
+      //var reg;
+      buyer.forEach(buyer => {
+
+        if (searchStartDate) {
+          if (searchStartDate > buyer.publishedDate)
+            return;
+        }
+
+        if (searchEndDate) {
+          if (searchEndDate < buyer.publishedDate)
+            return;
+        }
+        {
+          arr.push(buyer);
+        }
+      })
+      setfilteredBuyerPost(arr);
+    }
+  }, [searchStartDate, searchEndDate, buyer])
 
   
-  
-  
-
   const deleteBuyerPost = (buyerId) => {
 
 
@@ -74,29 +94,7 @@ function ViewBuyerPost() {
 
   }, [])
 
-  useEffect(() => {
-    setfilteredBuyerPost(buyer);
-    if (searchStartDate || searchEndDate) {
-      var arr = [];
-      //var reg;
-      buyer.forEach(buyer => {
-
-        if (searchStartDate) {
-          if (searchStartDate > buyer.date)
-            return;
-        }
-
-        if (searchEndDate) {
-          if (searchEndDate < buyer.date)
-            return;
-        }
-        {
-          arr.push(buyer);
-        }
-      })
-      setfilteredBuyerPost(arr);
-    }
-  }, [searchStartDate, searchEndDate, buyer])
+ 
 
 
 
@@ -164,7 +162,7 @@ function ViewBuyerPost() {
                 <td>{val.postTitle}</td>
                 <td>{val.description}</td>
                 <td>{val.mobileNo}</td>
-                <td>{new Date(val.date).toDateString()}</td>
+                <td>{new Date(val.publishedDate).toDateString()}</td>
                 <td>{val.targetPrice}</td>
                 <td>{val.quantityRequired}</td>
                 <td>{val.paymentTerms}</td>

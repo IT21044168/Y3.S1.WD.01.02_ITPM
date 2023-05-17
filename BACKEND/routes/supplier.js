@@ -2,7 +2,7 @@ const router = require('express').Router();
 let supplier = require('../Models/supplier');//import the model
 
 
-//  http://localhost:8070/buyer/add
+//  http://localhost:8070/supplier/add
 //sends the data in the request body
 
 router.route('/addPost').post((req, res) => {
