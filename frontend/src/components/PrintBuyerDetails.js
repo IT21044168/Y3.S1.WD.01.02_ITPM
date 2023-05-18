@@ -12,7 +12,7 @@ function PrintBuyerDetails() {
 
     const navigate = useNavigate();
 
-    //getpost function(Display all income logs)
+    //getpost function(Display all buyer posts)
     useEffect(() => {
         function getBuyer() {
             axios.get('http://localhost:8070/buyer/').then((res) => {
@@ -29,8 +29,6 @@ function PrintBuyerDetails() {
         <>
             <main className='background'>
                 <div>
-
-
                 </div>
                 <header>
                     <div id="printbtn">
@@ -41,7 +39,7 @@ function PrintBuyerDetails() {
                 <section ref={ref} className="details-container">
                     <div className="company-details-header">
                         <h1>ALL BUYER DETAILS REPORT</h1>
-                      { /* <img className="company-logo" src={logo} alt="logo" />*/}
+                    
                     </div>
                     <div className="company-details-container">
                         <div className="company-details">
