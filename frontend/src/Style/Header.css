@@ -1,0 +1,14 @@
+.navbar-nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    
+  }
+.nav-link {
+    font-size: 20px; /* change to the desired font size */
+    color:black;
+  }
+.navbar{
+    background-color: #2dc0de; /* replace with your desired color */
+    color: rgb(12, 10, 10); /* optionally, add a text color that contrasts with the background */
+}
