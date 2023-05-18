@@ -45,7 +45,7 @@ function AddSupplier(){
             <h4>Profile Details</h4>
                 <div className="form-group col-md-5">
                     <label for="validationUser" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="validationUser" required/>
+                    <input type="text" class="form-control" id="validationUser"  required/>
                     <div className="valid-feedback">
                         Looks good!
                     </div>

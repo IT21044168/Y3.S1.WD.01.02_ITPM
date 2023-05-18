@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
     <div className='homepage'>
       <br/>
       <button className='button1'>Create an account</button>
-      <Link to='/supplier/AddSupplier' className='linkbtn'></Link>
+      
     <div className='home'>Welcome!
 <form>
   <br/>
