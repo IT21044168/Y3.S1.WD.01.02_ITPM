@@ -107,7 +107,7 @@ function ViewBuyerPost() {
         <div>
           <form className="form-inline" >
             <div className='input-group'>
-              <span className="navbar-brand"><Link to="/buyer" className="nav-link">JoyHoney</Link></span>
+              <span className="navbar-brand"><Link to="/buyer/BuyerPage" className="nav-link">JoyHoney</Link></span>
               <div style={{ display: "flex" }}>
                 <label htmlFor="searchStartDate" className="form-label me-1">From: </label>
                 <input type="date" name="searchStartDate" id="searchStartDate" className="form-control form-control-sm mb-2" style={{ width: "150px" }} value={searchStartDate}
@@ -125,10 +125,10 @@ function ViewBuyerPost() {
         </div>
         
         <div>
-          <button className="btn btn-outline-info my-2 mx-1 my-sm-0">
+        <button type="button" class="btn btn-link">
             <Link to="/buyer/PrintBuyerDetails" className="nav-link">Report</Link>
           </button>
-          <button className="btn btn-outline-info my-2 mx-1 my-sm-0">
+          <button type="button" class="btn btn-warning">
             <Link to="/buyer/addPost" className="nav-link">Create Post</Link>
           </button>
 

@@ -47,3 +47,8 @@ h1{
     height: 30px;
     border-radius:5px;
   }
+.dev-container{
+    background-image: url("https://media.istockphoto.com/id/536218547/vector/honey-pattern-vector-illustration.jpg?s=612x612&w=0&k=20&c=vHf7lFnlt1ASaGJQOvlIcwXIEdZMpt_DImARdXzlvmQ=");
+    background-size: contain;
+
+}

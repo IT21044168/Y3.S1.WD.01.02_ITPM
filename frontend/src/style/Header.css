@@ -8,6 +8,21 @@
     color:black;
   }
 .navbar{
-    background-color: #2dc0de; 
+    background-color:rgb(206, 206, 220); 
     color: rgb(12, 10, 10); 
 }
+
+.navbar-nav:hover{
+  color: red;
+}
+.create-account-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  align-items: center;
+}
+.main{
+  align-content: center;
+}
+
+
