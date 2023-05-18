@@ -68,7 +68,7 @@ import '../style/Home.css';
   
     
     <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/1/9/0/hatk_honey-pot_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371603793161.jpeg" class="rounded float-left" width="350px"></img>
-<img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-21.jpg" class="rounded float-right"  width="350px"></img>
+<img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-21.jpg" class="rounded float-right"  width="300px"></img>
     </form>
     <button type="button" class="btn btn-primary btn-lg" >
       <Link to="/buyer/allPosts" className="nav-link">View Posts</Link>

@@ -5,7 +5,7 @@ import '../style/buyer.css'
 import swal from 'sweetalert';
 
 
-export default function AddIncome() {
+export default function AddBuyerPost() {
     const navigate = useNavigate();
 
     const [buyerId, setbuyerId] = useState("");

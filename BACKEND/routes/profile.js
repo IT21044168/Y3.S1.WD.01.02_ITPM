@@ -15,7 +15,7 @@ router.route('/createProfile').post((req, res) => {
     const district = req.body.district ;
  
     
-    const newsUserProfile = new User({
+    const newUserProfile = new User({
         firstName ,
         lastName,
         mobileNo,
@@ -28,7 +28,7 @@ router.route('/createProfile').post((req, res) => {
     })
 
 //pass the created object to the model as a documnet
-newsUserProfile.save().then(() => {
+newUserProfile.save().then(() => {
         res.json("New User added")
     }).catch((err) => {
         console.log(err);
@@ -37,7 +37,7 @@ newsUserProfile.save().then(() => {
 })
 
 
-//  http://localhost:8070/buyer/allPosts
+//  http://localhost:8070/buyer/userDetails
 
 router.route("/userDetails").get((req,res)=>{
     User.find().then((UserProfile)=>{
