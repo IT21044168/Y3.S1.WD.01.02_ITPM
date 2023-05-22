@@ -1,5 +1,9 @@
 # Y3.S1.WD.01.02_ITPM
+
 This is a system that build to connect the supplier and buyer in the honey industry
+The four main functions crated are supplier advertisement management, buyer advertisement management, feedback, admin dashboard.
+Other features are admin login, user profile management.
+
 
 Group Details
 
