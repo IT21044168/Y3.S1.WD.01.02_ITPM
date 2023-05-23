@@ -11,6 +11,6 @@ Member 1 - IT21044168 - Perera K.H.T
 
 Member 2 - IT21036002 - Pathirathna S.N
 
-Member 3 - IT21040726 - Galhenage K.H.
+Member 3 - IT21040726 - Galhenage K.H.P
 
 Member 4 - IT21040108 - Dissanayake M.N.A
